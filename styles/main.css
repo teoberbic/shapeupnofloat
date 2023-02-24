@@ -1,24 +1,25 @@
+/* =========== UNIVERSAL SELECTOR =========== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
+/* =========== SHADOW TEXT ================= */
 .shadow {
     text-shadow: 1px 1px 15px maroon;
     font-variant: small-caps;
     font-weight: bolder;
 }
 
+/*=======================================================
+
+                   ROOT ELEMENTS
+
+=======================================================*/
 html {
     background-color: lightsteelblue;
     background-image: url(../images/bgtile.jpg);
+    background-attachment: fixed;
 }
 
 body {
@@ -33,6 +34,11 @@ body {
     box-shadow: 5px 5px 20px 10px black;
 }
 
+/*=======================================================
+
+                      HEADER
+
+=======================================================*/
 header {
     border-bottom: 3px solid steelblue;
     background-image: linear-gradient(white, lightsteelblue);
@@ -43,72 +49,21 @@ header h2 {
     font-size: 250%;
     font-style: italic;
     color: steelblue;
-    text-shadow: 3px 3px 7px steelblue;
+    text-shadow: 3px 3px 12px steelblue;
     
-}
-header h2, header h3 {
-    padding: .5em;
-}
-
-h1 {
-    padding: .75em 0;
-    text-align: center;
-}
-h3, h4 {
-    padding: .5em 0;
-}
-p {
-    padding: .5em 0;
 }
 
 header img {
-    float: left;
-    margin: 0 .75em;
     max-width: 140px;
     min-width: 70px;
     width: 100%;
 }
 
-/* =====================================================
+/*=======================================================
 
-             Navigation Menu - using display: inline;
+             NAVIGATION MENU - #nav_menu
 
-=========================================================
-#nav_menu {
-    margin: 0;
-}
-#nav_menu ul {
-    margin-top: 0;
-    list-style-type: none;
-    text-align: center;
-    border-bottom: 3px solid steelblue;
-    background-color: lightsteelblue;
-    padding: 10px 0;
-}
-#nav_menu ul li {
-    display: inline;
-    border-right: 2px solid black;
-    padding: 10px 3em;
-}
-#nav_menu #last {
-    border-right: none;
-}
-#nav_menu ul li a {
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-#nav_menu ul li a:hover {
-    color: red;
-    text-decoration: underline;
-}
-======================================*/             
-
-/*===========================================
-
-          nav_menu using block and float
-
-==============================================*/
+=======================================================*/
 #nav_menu {
     border-bottom: 3px solid steelblue;
     background-color: steelblue;
@@ -119,7 +74,6 @@ header img {
     position: relative;
 }
 #nav_menu ul li {
-    float: left;
     width: 20%;
 }
 #nav_menu ul li a {
@@ -139,7 +93,7 @@ header img {
     width: 100%;
 }
 #nav_menu ul ul li {
-    float: none;
+    /* float: none; */
 }
 #nav_menu ul ul li a {
     text-align: left;
@@ -148,31 +102,26 @@ header img {
 #nav_menu ul li:hover > ul {
     display: block;
 }
-#nav_menu > ul::after {
+/* #nav_menu > ul::after {
     content: "";
     clear: both;
     display: block;
-}
+} */
 #nav_menu a:hover {
     color: black;
     background-color: lightsteelblue;
 }
 
-/* ===================================
+/* ==================================================
 
-             Navigation List
+       LEFT ASIDE NAVIGATION LIST - #nav_list
 
-======================================*/             
-#nav_list h2 {
-    margin-bottom: 5px;
-    text-align: center;
-}
+===================================================*/             
 #nav_list ul {
     list-style-type: none;
 }
 #nav_list li {
     width: 90%;
-    margin: 0 auto 5px;
     border: 1px solid steelblue;
     border-radius: 5px;
 }
@@ -189,64 +138,42 @@ header img {
     color: white;
 }
 
+/*===============================================
 
-main {
-    clear: both;
-    padding-right: .25em;
+                MAIN ELEMENTS
 
+===============================================*/
+/* ============= LINKS ======================= */
+a {
+    text-decoration: none;
 }
-
-/* Section Link Colors */
-section a:link, section a:visited{
-    color: maroon;
-}
-section a:hover, section a:focus {
+a:link, a:visited {
     color: steelblue;
 }
-
-/* Aside link Colors */
-aside a:link, aside a:visited {
-    color: steelblue;
-}
-aside a:hover, aside a:focus {
+a:hover, a:focus {
     color: maroon;
+    text-decoration: underline;
 }
 
 section {
-    float: left;
-    width: 50%;
-    padding: 0 .3em;
+    /* width: 50%; */
 }
-section h3 {
-    margin-top: 20px;
+section h1 {
+    margin: 0;
 }
-
 aside {
-    float: left;
-    width: 25%;
+    /* width: 25%; */
 }
-
 #rightcol {
-    float: right;
-    width: 25%;
-    border-left: 3px solid steelblue;
-    padding-left: 10px;
-}
 
+}
 aside h3 {
-    text-align: center;
-    padding-top: 50px;
     color: maroon;
     font-size: 110%;
 }
 
-aside li {
-    line-height: 1.5em;
-}
-
 blockquote {
     width: 80%;
-    margin-left: 20px;
     padding: 10px;
     border-left: 25px solid steelblue;
     border-top: 3px solid steelblue;
@@ -261,19 +188,23 @@ blockquote {
 blockquote:hover {
     background-color: steelblue;
     color: white;
-
 }
 
+/*==================================================
+
+                       FOOTER
+
+==================================================*/                       
 footer {
-    clear: both;
+    /* clear: both; */
     background-color: steelblue;
     padding: 15px 0;
     border-radius: 0 0 7px 7px;
 }
-
 footer p {
     font-size: 75%;
     text-align: center;
+    font-variant: small-caps;
     color: white;
 }
 
@@ -285,9 +216,11 @@ footer p {
 
                   MEDIA QUERIES
 
-============================================================*/
-
+=============================================================*/
 @media only screen and (max-width: 900px) {
+    html {
+        background-image: none;
+    }
     body {
          box-shadow: none;
          border: none;
@@ -295,13 +228,13 @@ footer p {
          border-radius: 0;
     }
     #leftcol {
-        display: none;
+        /* display: none; */
     }
     section {
-        width: 70%;
+        /* width: 70%; */
     }
     #rightcol {
-        width: 30%;
+        /* width: 30%; */
     }
     header, footer {
         border-radius: 0;
@@ -323,11 +256,11 @@ footer p {
         border-left: none;
     }
     section, aside, #rightcol {
-        float: none;
-        width: 95%;
-        margin: 10px auto;
+        /* float: none; */
+        /* width: 95%; */
     }
 }
+
 @media only screen and (max-width: 479px) {
     
 }
