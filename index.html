@@ -46,7 +46,7 @@
 
 <body>
 	<header class="clearfix">
-		<img src="images/shape_up_logo.png" alt="Logo Image">
+		<a href="index.html"><img src="images/shape_up_logo.png" alt="Click here to return to Home Page" title="Click here to return to Home Page"></a>
 		<div>
 			<h2>Shape Up!</h2>
 			<h3>Find the <span class="shadow">best</span> fit for you</h3>
@@ -132,8 +132,18 @@
 	</main>
 
 	<!--------------------------- Footer ----------------------------------->
+	
+	<!----This will be in midterm---->
 	<footer>
-		<p>&copy; 2023 Shape Up!</p>
+		<p>&copy; <span id="copyright"></span> Shape Up!</p>
 	</footer>
+
+	<script>
+        window.onload = function() {
+            var d = new Date();
+            document.getElementById("copyright").innerHTML = d.getFullYear();
+        }
+    </script>
+
 </body>
 </html>
